@@ -54,7 +54,7 @@ app.layout = html.Div(
                         html.Div(
                             [
                                 html.H3(
-                                    "New York Oil and Gas",
+                                    "AAMovil- Mobile Apps Analysis",
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
@@ -70,17 +70,47 @@ app.layout = html.Div(
                     [
                         html.A(
                             html.Button("Learn More", id="learn-more-button"),
-                            href="https://plot.ly/dash/pricing/",
+                            href="https://github.com/maorjuela73/DS4A-FinalProject",
                         )
                     ],
-                    className="one-third column",
+                    className="one column",
                     id="button",
                 ),
             ],
             id="header",
             className="row flex-display",
             style={"margin-bottom": "25px"},
-        )
+        ),
+    html.Div(
+        [
+            html.Div([
+                    html.P(
+                        "Search By Name",
+                        className="control_label",
+                        ),
+                    dcc.Input(id='username', value='', type='text'),
+                    html.Button(id='submit-button', type='submit', children='Search'),
+                    html.Div(id='output_div')
+
+                    ]),
+            # TODO: Put space here
+            html.Div([
+                    html.P(
+                        "Choose Stores",
+                        className="control_label",
+                        ),
+                    dcc.Checklist(
+                    options=[
+                            {'label': 'Google Play Store', 'value': 'Google'},
+                            {'label': 'Apple App Store', 'value': 'Apple'}
+                            ],
+                            value=['Google']
+                        )
+                    ]),
+        ])
+
+
+
 
 ])
 
